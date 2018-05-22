@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>¯\_(ツ)_/¯</title>
+  </head>
+  <body>
+    The shrug's already selected. Just hit Cmd + C to copy. <br />
+    <span class="shrug">¯\_(ツ)_/¯</span>
+    <script type="text/javascript">
+      function selectElementContents(el) {
+        var range = document.createRange();
+        range.selectNodeContents(el);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+      window.onload = () => {
+        const el = document.querySelector("span.shrug");
+        selectElementContents(el);
+        requestAnimationFrame(() => document.execCommand('copy'));
+      }
+    </script>
+  </body>
+</html>
